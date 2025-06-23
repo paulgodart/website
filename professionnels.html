@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AssuroLib - Accueil</title>
+  <title>AssuroLib - Professionnels</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+    body, header, footer, .container, nav ul, nav a, .pro-list { all: initial; }
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
     header, footer { background: #003366; color: white; padding: 1rem; }
     .container { width: 90%; margin: 0 auto; }
     nav ul { list-style: none; display: flex; gap: 1rem; }
     nav a { color: white; text-decoration: none; }
-    .btn { padding: 0.5rem 1rem; background: #0055aa; color: white; border: none; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 1rem; }
-    #hero { background: #eef; padding: 3rem 0; text-align: center; }
+    .pro-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .pro-card { background: white; border: 1px solid #ccc; padding: 1rem; border-radius: 10px; text-align: center; }
+    .pro-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
   </style>
 </head>
 <body>
@@ -32,11 +34,23 @@
   </header>
 
   <main>
-    <section id="hero">
+    <section id="professionnels">
       <div class="container">
-        <h2>Réservez facilement un rendez-vous avec un professionnel de confiance</h2>
-        <p>Plombiers, serruriers, garagistes, vitriers... Trouvez le bon expert pour vos besoins</p>
-        <a href="rendezvous.html" class="btn">Commencer</a>
+        <h2>Nos professionnels</h2>
+        <div class="pro-list">
+          <div class="pro-card">
+            <img src="https://via.placeholder.com/300x200" alt="Pro 1 - Spécialiste">
+            <h3>Pro 1</h3>
+            <p>Plombier à Ville 1</p>
+            <a href="rendezvous.html" class="btn">Prendre RDV</a>
+          </div>
+          <div class="pro-card">
+            <img src="https://via.placeholder.com/300x200" alt="Pro 2 - Spécialiste">
+            <h3>Pro 2</h3>
+            <p>Serrurier à Ville 2</p>
+            <a href="rendezvous.html" class="btn">Prendre RDV</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
