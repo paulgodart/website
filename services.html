@@ -4,16 +4,140 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AssuroLib - Services</title>
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    body, header, footer, .container, nav ul, nav a, .services-grid { all: initial; }
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #003366; color: white; padding: 1rem; }
-    .container { width: 90%; margin: 0 auto; }
-    nav ul { list-style: none; display: flex; gap: 1rem; }
-    nav a { color: white; text-decoration: none; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
-    section { padding: 2rem 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      text-align: center; /* CENTRAGE global */
+      font-size: 18px; /* texte plus grand */
+      line-height: 1.6;
+    }
+
+    header, footer {
+      background-color: #003366;
+      color: white;
+      padding: 2rem 0; /* bandeaux plus hauts */
+      text-align: center; /* centre le texte dans header/footer */
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 3rem; /* titre plus gros */
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center; /* centre horizontal des liens */
+      gap: 2rem;
+      padding: 0;
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.25rem; /* liens plus gros */
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background-color: #ffcc00;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 3rem 0;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #003366;
+      font-weight: 700;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .services-grid article {
+      background-color: white;
+      padding: 2rem 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+      cursor: default;
+    }
+
+    .services-grid article:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .services-grid h3 {
+      color: #003366;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .services-grid p {
+      font-size: 1.15rem;
+      color: #444;
+    }
+
+    footer p {
+      margin: 0.3rem 0;
+      font-size: 1rem;
+    }
+
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: 600;
+      transition: text-decoration 0.3s ease;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -37,10 +161,22 @@
       <div class="container">
         <h2>Nos services</h2>
         <div class="services-grid">
-          <article><h3>Plomberie</h3><p>Fuites, débouchages, installations sanitaires.</p></article>
-          <article><h3>Serrurerie</h3><p>Urgence serrure, remplacement, ouverture de porte.</p></article>
-          <article><h3>Garage & Dépannage</h3><p>Réparation auto, changement de pneus, diagnostics.</p></article>
-          <article><h3>Vitrier</h3><p>Remplacement de vitre, vitrage sécurisé, fenêtres.</p></article>
+          <article>
+            <h3>Plomberie</h3>
+            <p>Fuites, débouchages, installations sanitaires.</p>
+          </article>
+          <article>
+            <h3>Serrurerie</h3>
+            <p>Urgence serrure, remplacement, ouverture de porte.</p>
+          </article>
+          <article>
+            <h3>Garage & Dépannage</h3>
+            <p>Réparation auto, changement de pneus, diagnostics.</p>
+          </article>
+          <article>
+            <h3>Vitrier</h3>
+            <p>Remplacement de vitre, vitrage sécurisé, fenêtres.</p>
+          </article>
         </div>
       </div>
     </section>

@@ -1,0 +1,15 @@
+
+git status 
+Permet de verifier si les fichiers sont eneregistre sur githubgit status 
+
+git pull
+Prend la nouvelle version du github
+
+git add .
+Ajoute tes fichiers non sauvegarder
+
+git commit -m "description"
+Pour mettre un message
+
+git push 
+Actualise les fichiers sur le github
