@@ -15,7 +15,7 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="professionnels.html">Professionnels</a></li>
-          <li><a href="rendezvous.html">Prendre RDV</a></li>
+          <li><a class="active" href="rendezvous.html">Prendre RDV</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -25,22 +25,45 @@
   <main>
     <section id="rendezvous">
       <div class="container">
-        <h2>Prendre un rendez-vous</h2>
-        <form>
+        <h2>Réservez un professionnel</h2>
+
+        <div class="professionals">
+          <div class="pro-card" data-name="Jean Dupont" data-service="Plomberie">
+            <img src="images/jean.jpg" alt="Jean Dupont" />
+            <h3>Jean Dupont</h3>
+            <p>Plombier – 10 ans d'expérience</p>
+          </div>
+          <div class="pro-card" data-name="Sophie Martin" data-service="Serrurerie">
+            <img src="images/sophie.jpg" alt="Sophie Martin" />
+            <h3>Sophie Martin</h3>
+            <p>Serrurière – Rapide et fiable</p>
+          </div>
+          <div class="pro-card" data-name="Ali Ben Amar" data-service="Vitrier">
+            <img src="images/ali.jpg" alt="Ali Ben Amar" />
+            <h3>Ali Ben Amar</h3>
+            <p>Vitrier – Service d'urgence</p>
+          </div>
+        </div>
+
+        <form id="bookingForm" action="paiement.html" method="GET">
+          <h3>Informations de réservation</h3>
+
+          <label for="pro">Professionnel</label>
+          <input type="text" id="pro" name="pro" readonly required />
+
           <label for="service">Service</label>
-          <select id="service" name="service">
-            <option value="plomberie">Plomberie</option>
-            <option value="serrurerie">Serrurerie</option>
-            <option value="garage">Garage</option>
-            <option value="vitrier">Vitrier</option>
-          </select>
+          <input type="text" id="service" name="service" readonly required />
+
           <label for="location">Localisation</label>
-          <input type="text" id="location" name="location" />
+          <input type="text" id="location" name="location" required />
+
           <label for="date">Date</label>
-          <input type="date" id="date" name="date" />
+          <input type="date" id="date" name="date" required />
+
           <label for="heure">Heure</label>
-          <input type="time" id="heure" name="heure" />
-          <button type="submit">Réserver</button>
+          <input type="time" id="heure" name="heure" required />
+
+          <button type="submit">Continuer vers le paiement</button>
         </form>
       </div>
     </section>
@@ -51,5 +74,14 @@
       <p>&copy; 2025 AssuroLib - Tous droits réservés.</p>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.pro-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.getElementById('pro').value = card.dataset.name;
+        document.getElementById('service').value = card.dataset.service;
+      });
+    });
+  </script>
 </body>
 </html>
